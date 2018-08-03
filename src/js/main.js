@@ -2,7 +2,7 @@
 var scriptsJS = (function($){
 
 function helloWorld() {
-	$('body').html("Hello World");
+	$('body').html('<h1 class="jumbotron">Hello World</h1>');
 }
 
 
