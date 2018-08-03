@@ -9,7 +9,29 @@
 </head>
 <body>
   <!--body-->
-  <div id="app"></div>
-  
+  <!-- put React app here -->
+  <!-- <div id="app"></div> -->
+  <div class="log-form container">
+    <h1 class="log-form-title">Login to Your Account</h1>
+    <div class="log-form-body">
+      <div class="log-form-head">
+       <h2>Sign in</h2>
+       <p>Please enter your email and password</p>
+      </div>
+      <form id="login">
+        <div class="form-group">
+          <input type="email" class="form-control" id="loginEmail" placeholder="Email Address">
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+        </div>
+        <div class="reset-pwd">
+          <a href="#">Forgot password?</a>
+        </div>
+        <button type="submit" class="log-form-submit btn btn-success">Login</button>
+      </form>
+    </div>
+  </div>
+
 </body>
 </html>

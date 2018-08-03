@@ -11,7 +11,7 @@ function helloWorld() {
 //  ==========================================================================	
 function init(){
 	$(document).ready(function(){
-		helloWorld();
+		// helloWorld();
 	});
 }
 
