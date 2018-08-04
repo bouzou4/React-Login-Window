@@ -1,13 +1,8 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import LoginContainer from "./components/LoginContainer.js";
 import Bootstrap from 'bootstrap';
 import './js/main.js';
 import './styles/imports.scss';
 
-// function app() {
-//     var element = document.createElement('div');
-
-//     element.innerHTML = '<p>Yo wassup </p>';
-
-//     return element;
-//   }
-
-// document.body.appendChild(app());
+ReactDOM.render(<LoginContainer />, document.getElementById("app"));
