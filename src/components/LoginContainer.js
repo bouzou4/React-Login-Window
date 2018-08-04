@@ -49,6 +49,10 @@ export default class LoginContainer extends Component {
       }
     });
 
+    if(emailValid && passValid)
+      return true;
+    else
+      return false;
   }
 
   handleChange(event) {
@@ -59,7 +63,10 @@ export default class LoginContainer extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.validateForm();
+    if(this.validateForm()) {
+      // replace with form post request
+      alert("Login Succesful");
+    }
   }
 
   render() {
