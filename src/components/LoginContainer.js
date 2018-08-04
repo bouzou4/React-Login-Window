@@ -9,7 +9,11 @@ export default class LoginContainer extends Component {
     this.state = {
       email: "",
       password: "",
-      valid: true
+      errors: {
+        email: false,
+        password: false,
+        messages: []
+      }
     };
 
     this.validateForm = this.validateForm.bind(this);
@@ -18,13 +22,39 @@ export default class LoginContainer extends Component {
   }
 
   validateForm() {
-    console.log(this.state.email.length > 0 && this.state.password.length > 0);
+    let errors = [];
+    let emailRE = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    let passRE = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}/;
+    let emailValid, passValid = false;
+
+    if(emailRE.test(String(this.state.email).toLowerCase()))
+      emailValid = true;
+    else {
+      emailValid = false;
+      errors.push("Please enter a valid Email");
+    }
+
+    if(passRE.test(String(this.state.password)))
+      passValid = true;
+    else {
+      passValid = false;
+      errors.push("Password must contain at least 8 characters and a combination of lowercase and uppercase letters, at least 1 number, and a special character");
+    }
+
+    this.setState({
+      errors: {
+        email: emailValid,
+        password: passValid,
+        messages: errors
+      }
+    });
+
   }
 
   handleChange(event) {
     this.setState({
       [event.target.type]: event.target.value
-    });
+    }, this.validateForm);
   }
 
   handleSubmit(event) {
@@ -41,7 +71,10 @@ export default class LoginContainer extends Component {
            <h2>Sign in</h2>
            <p>Please enter your email and password</p>
           </div>
-          <LoginAlert showError={!this.state.valid} errorMsg="you have a login error"/>
+          <LoginAlert 
+            showError={!(this.state.errors.email && this.state.errors.password)} 
+            errorMsg={this.state.errors.messages}
+          />
           <form onSubmit={this.handleSubmit} id="login">
             <div className="form-group">
               <input 
