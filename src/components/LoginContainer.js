@@ -10,8 +10,8 @@ export default class LoginContainer extends Component {
       email: "",
       password: "",
       errors: {
-        email: false,
-        password: false,
+        email: true,
+        password: true,
         messages: []
       }
     };
@@ -78,10 +78,9 @@ export default class LoginContainer extends Component {
            <h2>Sign in</h2>
            <p>Please enter your email and password</p>
           </div>
-          <LoginAlert 
-            showError={!(this.state.errors.email && this.state.errors.password)} 
-            errorMsg={this.state.errors.messages}
-          />
+          {!(this.state.errors.email && this.state.errors.password) && 
+            <LoginAlert errorMsg={this.state.errors.messages} />
+          }
           <form onSubmit={this.handleSubmit} id="login">
             <div className="form-group">
               <input 
