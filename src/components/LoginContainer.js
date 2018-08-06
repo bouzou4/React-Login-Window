@@ -23,18 +23,18 @@ export default class LoginContainer extends Component {
 
   validateForm() {
     let errors = [];
-    let emailRE = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    let passRE = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}/;
+    let emailRegex = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    let passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&]{8,}/;
     let emailValid, passValid = false;
 
-    if(emailRE.test(String(this.state.email).toLowerCase()))
+    if(emailRegex.test(String(this.state.email).toLowerCase()))
       emailValid = true;
     else {
       emailValid = false;
       errors.push("Please enter a valid Email");
     }
 
-    if(passRE.test(String(this.state.password)))
+    if(passRegex.test(String(this.state.password)))
       passValid = true;
     else {
       passValid = false;
