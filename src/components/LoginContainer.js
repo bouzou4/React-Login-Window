@@ -72,11 +72,10 @@ export default class LoginContainer extends Component {
   render() {
     return (
       <div className="log-form container">
-        <h1 className="log-form-title">Login to Your Account</h1>
+        <h1 className="log-form-title"><img src="./img/logo.png" alt="Videri" className="log-form-logo" />Orchestrator</h1>
         <div className="log-form-body">
           <div className="log-form-head">
            <h2>Sign in</h2>
-           <p>Please enter your email and password</p>
           </div>
           {!(this.state.errors.email && this.state.errors.password) && 
             <LoginAlert errorMsg={this.state.errors.messages} />
@@ -87,7 +86,7 @@ export default class LoginContainer extends Component {
                 type="email"
                 className="form-control" 
                 id="loginEmail" 
-                placeholder="Email Address" 
+                placeholder="ID" 
                 value={this.state.email}
                 onChange={this.handleChange}
               />
@@ -102,10 +101,7 @@ export default class LoginContainer extends Component {
                 onChange={this.handleChange}
               />
             </div>
-            <div className="reset-pwd">
-              <a href="#">Forgot password?</a>
-            </div>
-            <button type="submit" className="log-form-submit btn btn-success">Login</button>
+            <button type="submit" className="log-form-submit btn btn-success">Sign In</button>
           </form>
         </div>
       </div>

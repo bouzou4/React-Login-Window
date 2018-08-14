@@ -1,32 +1,63 @@
 
 .log-form {
+  font-family: helvetica, sans-serif;
+  font-size: 14pt;
   max-width: 600px;
   background-color: white;
-  padding: 25px 100px;
-  padding-bottom: 60px;
+  padding: 50px 100px;
+  padding-bottom: 120px;
   box-shadow: rgba(0,0,0,0.7) 0 0 50px 5px;
   margin-top: 10%;
 }
 
-.log-form-title {
-  font-weight: 200;
-  margin-bottom: 1.5rem;
+.log-form-logo {
+  width: 135px;
+  height: 21px;
+  vertical-align: baseline;
+  margin-right: 15px;
 }
 
-.log-form-head p {
-  margin-bottom: 0.25rem;
+.log-form-title {
+  font-family: helvetica, sans-serif;
+  font-size: 14pt;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.log-form-head h2 {
+  text-transform: uppercase;
+  font-family: helvetica, sans-serif;
+  letter-spacing: 2px;
+  font-size: 14pt;
+  margin-bottom: 28px;
 }
 
 #login .form-group {
-  margin-bottom: 0.5rem;
+  margin-bottom: 20px;
 }
 
 #login .form-control {
+  font-family: helvetica, sans-serif;
+  font-size: 14pt;
+  height: 50px;
+  line-height: 18px;
   border-radius: 0px;
+  padding: 15px;
+}
+
+.form-control::placeholder {
+  font-family: helvetica, sans-serif;
+  font-size: 14pt;
+  letter-spacing: 2px;
+  color: #AAAAAA;
 }
 
 .log-form-submit {
-  padding: 5px 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  padding: 12px 46px 10px 49px;
   border-radius: 0px;
   float: right;
   clear: left;
